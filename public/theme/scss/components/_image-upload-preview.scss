@@ -16,4 +16,10 @@
     & > * + * {
         margin-left: 15px;
     }
+
+    @include phone-portrait {
+        & > img {
+            border-radius: 2px;
+        }
+    }
 }
