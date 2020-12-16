@@ -35,4 +35,12 @@
             margin-top: 20px;
         }
     }
+
+    @include phone-portrait {
+        width: 90vw;
+
+        padding: 0;
+
+        box-shadow: none;
+    }
 }
