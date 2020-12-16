@@ -20,7 +20,7 @@ app.use(cookieParser());
 app.use('/public', express.static('public'));
 
 app.set('view engine', 'ejs');
-app.set('views', ['src/presentation']);
+app.set('views', ['src/presentation/views']);
 
 app.set('trust proxy', 1);
 
