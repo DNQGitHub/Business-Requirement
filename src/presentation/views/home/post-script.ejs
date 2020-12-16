@@ -1,0 +1,20 @@
+<script>
+$("input[type=file]#image").change(function(e) {
+    var thiz = e.currentTarget;
+
+    if (thiz.files && thiz.files[0]) {
+        var reader = new FileReader();
+    
+        reader.onload = function(e) {
+            $('#preview').attr('src', e.target.result);
+        }
+    
+        reader.readAsDataURL(thiz.files[0]);
+    }
+});
+
+$("#form-sign-up").submit(function(e) {
+    e.preventDefault();
+    alert();
+});
+</script>
