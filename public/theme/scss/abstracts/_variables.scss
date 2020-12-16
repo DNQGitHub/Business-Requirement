@@ -1,0 +1,27 @@
+$primary-color: rgb( 200, 50, 75 );
+$secondary-color: rgb( 150, 50, 75 );
+$third-color: rgb( 100, 50, 75 );
+
+
+$theme-colors: ();
+$theme-colors: map-merge(
+    (
+        "primary":    $primary-color,
+        "secondary":  $secondary-color,
+        "third": $third-color
+        // "success":    $success,
+        // "info":       $info,
+        // "warning":    $warning,
+        // "danger":     $danger,
+        // "light":      $light,
+        // "dark":       $dark
+    ),
+    $theme-colors
+);
+
+$fa-font-path: "../fonts/FontAwesome/";
+
+$main-font-family: 'Roboto';
+
+$input-font-family: $main-font-family;
+$input-btn-font-family: $main-font-family;
