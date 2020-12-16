@@ -9,6 +9,16 @@
     './vendors/bootstrap', 
     './vendors/font-awesome';
 
+
+@import 
+    './components/btn-submit',
+    './components/image-upload-preview',
+    './components/form-sign-up';
+
+@import
+    './layout/section-sign-up',
+    './layout/content';
+
 @import 
     './base/ultilities', 
     './base/animation', 
