@@ -1,0 +1,26 @@
+{
+	"compilerOptions": {
+		"baseUrl": "./",
+		"emitDecoratorMetadata": true,
+		"esModuleInterop": true,
+		"experimentalDecorators": true,
+		"importHelpers": true,
+		"module": "commonjs",
+		"outDir": "dist",
+		"removeComments": true,
+		"sourceMap": true,
+		"strict": true,
+		"target": "es6",
+		"moduleResolution": "node",
+		"paths": {
+			"@presentation/*": ["src/presentation/*"],
+			"@application/*": ["src/application/*"],
+			"@domain/*": ["src/domain/*"],
+			"@infrastructure/*": ["src/infrastructure/*"]
+		},
+		"types": ["node"],
+		"typeRoots": ["node_modules/@types"]
+	},
+	"include": ["src/**/*.ts"],
+	"exclude": ["src/public/", "src/infrastructure/knex/migrations/", "k8s", "node_modules"]
+}

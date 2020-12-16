@@ -1,0 +1,21 @@
+{
+	"window.zoomLevel": 0,
+	"breadcrumbs.enabled": true,
+
+	"indentRainbow.errorColor": "rgba(0,0,0,0)",
+
+	"editor.fontSize": 15,
+	"editor.formatOnSave": true,
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"editor.tabCompletion": "onlySnippets",
+
+	"material-icon-theme.folders.theme": "classic",
+	"material-icon-theme.hidesExplorerArrows": true,
+
+	"workbench.tree.indent": 20,
+	"workbench.tree.renderIndentGuides": "always",
+	"workbench.iconTheme": "material-icon-theme",
+
+	"typescript.suggest.completeJSDocs": true,
+	"typescript.suggest.enabled": true
+}
