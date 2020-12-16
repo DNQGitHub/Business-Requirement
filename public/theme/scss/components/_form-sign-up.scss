@@ -6,27 +6,29 @@
     width: 400px;
     height: auto;
     
-    padding: 20px;
+    padding: 30px;
 
     color: gray;
 
     font-size: 1.3rem;
 
-    & * + * {
+    box-shadow: 0px 0px 15px -5px rgba(gray, 0.5);
+
+    * + * {
         margin-top: 5px;
     }
 
-    & img {
+    img {
         background-image: url('../images/image-placeholder-350x350.png');
         background-size: contain;
     }
 
-    & .form-control {
+    .form-control {
         color: inherit;
         font-size: inherit;
     }
 
-    & .btn {
+    .btn {
         font-size: inherit;
 
         &-submit {
