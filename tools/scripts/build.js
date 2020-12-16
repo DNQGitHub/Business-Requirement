@@ -1,10 +1,7 @@
 const fs = require('fs-extra');
 const childProcess = require('child_process');
 
-const copiedFiles = {
-	'./src/infrastructure/ldap/certs/certificate.pem': './dist/infrastructure/ldap/certs/certificate.pem',
-	'./src/infrastructure/ldap/certs/privatekey.pem': './dist/infrastructure/ldap/certs/privatekey.pem',
-};
+const copiedFiles = {};
 
 try {
 	fs.removeSync('./dist/');
