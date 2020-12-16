@@ -27,4 +27,35 @@
             font-size: 3rem;
         }
     }
+
+    @include phone-portrait {
+        flex-direction: column;
+
+        .introduce {
+            flex-direction: column;
+
+            text-align: center;
+    
+            width: 100%;
+            height: auto;
+    
+            font-size: 1.0rem;
+    
+            margin-right: 0;
+            padding-right: 0;
+    
+            h1 {
+                width: 100%;
+
+                margin-bottom: 40px;
+
+                font-size: 2rem;
+                text-align: center;
+            }
+
+            p {
+                display: none;
+            }
+        }
+    }
 }
