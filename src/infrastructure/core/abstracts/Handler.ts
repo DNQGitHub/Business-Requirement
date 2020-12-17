@@ -9,5 +9,5 @@ export default abstract class Handler<T> extends EventDispatcher {
 
 	protected async validate(obj: T): Promise<any> {}
 
-	public abstract async handle(obj: T): Promise<any>;
+	public abstract handle(obj: T): Promise<any>;
 }
