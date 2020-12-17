@@ -37,4 +37,19 @@ export default class Subscriber extends Entity<ISubscriberProps> {
 	get updatedDate() {
 		return this._props.updatedDate;
 	}
+
+	updateName(name: string) {
+		this._props.name = name;
+		this._props.updatedDate = new Date();
+	}
+
+	updatePhoneNumber(phoneNumber: string) {
+		this._props.phoneNumber = phoneNumber;
+		this._props.updatedDate = new Date();
+	}
+
+	updateImageUrl(imageUrl: string) {
+		this._props.imageUrl = imageUrl;
+		this._props.updatedDate = new Date();
+	}
 }
