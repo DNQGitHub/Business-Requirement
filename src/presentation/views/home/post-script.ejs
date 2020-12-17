@@ -30,6 +30,7 @@ $("#form-sign-up").submit(function(e) {
             console.log(JSON.stringify(data));
             alert('subscribe successful');
             thiz.reset();
+            $('img#preview').attr('src', '/public/theme/images/image-placeholder-350x350.png');
         },
         error: function(req, status, error ) {
             const errors = req.responseJSON.error;
