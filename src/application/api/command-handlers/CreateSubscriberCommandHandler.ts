@@ -1,8 +1,14 @@
+import ISubscriberDao from '@domain/daos/ISubscriberDao';
+import Subscriber from '@domain/entities/Subscriber';
 import CommandHandler from '@infrastructure/core/abstracts/CommandHandler';
 import ValidationError from '@infrastructure/core/errors/ValidationError';
 import CreateSubscriberCommand from '@presentation/requests/api/CreateSubscriberCommand';
+import { inject, injectable } from 'inversify';
 
+@injectable()
 export default class CreateSubscriberCommandHandler extends CommandHandler<CreateSubscriberCommand> {
+	@inject('ISubscriberDao') private _subscriberDao!: ISubscriberDao;
+
 	async validate(command: CreateSubscriberCommand) {
 		this._ec.collect('name', () => {
 			if (!!command.name === false) throw Error('name is emtpy');
@@ -24,5 +30,26 @@ export default class CreateSubscriberCommandHandler extends CommandHandler<Creat
 
 	public async handle(command: CreateSubscriberCommand): Promise<any> {
 		await this.validate(command);
+
+		let subscriber = await this._subscriberDao.findOneByEmail(command.email);
+
+		if (subscriber === null) {
+			subscriber = Subscriber.create({
+				name: command.name,
+				email: command.email,
+				phoneNumber: command.phoneNumber,
+				imageUrl: process.env.BASE_URL + '/' + command.image.path,
+			});
+
+			await this._subscriberDao.insert(subscriber);
+		} else {
+			subscriber.updateGeneralInfo({
+				name: command.name,
+				phoneNumber: command.phoneNumber,
+				imageUrl: process.env.BASE_URL + '/' + command.image.path,
+			});
+
+			await this._subscriberDao.update(subscriber);
+		}
 	}
 }
