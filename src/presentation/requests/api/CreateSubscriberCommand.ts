@@ -4,18 +4,18 @@ export interface ICreateSubscriberCommand {
 	name: string;
 	email: string;
 	phoneNumber: string;
-	image: any;
+	image: Express.Multer.File;
 }
 
 export default class CreateSubscriberCommand implements ICreateSubscriberCommand {
 	private _name: string;
 	private _email: string;
 	private _phoneNumber: string;
-	private _image: any;
+	private _image: Express.Multer.File;
 
 	constructor(req: Request) {
 		const { name, email, phoneNumber } = req.body;
-		const { image } = req.body;
+		const image = req.file;
 
 		this._name = name;
 		this._email = email;
