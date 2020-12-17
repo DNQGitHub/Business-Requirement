@@ -7,21 +7,26 @@ $(document).ready( function() {
         success: function (data) {
             console.log(JSON.stringify(data));
             if( data.success ) {
-                const subscribers = data.subscribers;
+                if( data.subscribers && data.subscribers.length > 0 ) {
+                    const subscribers = data.subscribers;
 
-                for ( let index in subscribers ) {
-                    let subscriber = subscribers[index];
-                    $('#table-subscribers').append(
-                        ' \
-                        <div class="table-row"> \
-                            <div class="table-cell table-cell--order">' + (+index + 1) + '</div> \
-                            <div class="table-cell table-cell--image"><img src="' + subscriber.imageUrl + '"></div> \
-                            <div class="table-cell table-cell--name">' + subscriber.name + '</div> \
-                            <div class="table-cell table-cell--email">' + subscriber.email + '</div> \
-                            <div class="table-cell table-cell--phone-number">' + subscriber.phoneNumber + '</div> \
-                        </div> \
-                        '
-                    );
+                    for ( let index in subscribers ) {
+                        let subscriber = subscribers[index];
+                        $('#table-subscribers').append(
+                            ' \
+                            <div class="table-row"> \
+                                <div class="table-cell table-cell--order">' + (+index + 1) + '</div> \
+                                <div class="table-cell table-cell--image"><img src="' + subscriber.imageUrl + '"></div> \
+                                <div class="table-cell table-cell--name">' + subscriber.name + '</div> \
+                                <div class="table-cell table-cell--email">' + subscriber.email + '</div> \
+                                <div class="table-cell table-cell--phone-number">' + subscriber.phoneNumber + '</div> \
+                            </div> \
+                            '
+                        );
+                    }
+                }
+                else {
+                    $('#table-subscribers').append('<p class="text-center mt-5">No subscriber found</p>');
                 }
             }
         },
