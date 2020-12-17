@@ -4,6 +4,7 @@ import document from '@infrastructure/swagger/document';
 
 const router = Router();
 
-router.get('/', SwaggerUi.serve, SwaggerUi.setup(document));
+router.use('/', SwaggerUi.serve);
+router.get('/', SwaggerUi.setup(document));
 
 export default router;
