@@ -3,7 +3,10 @@ import SubscriberEntity from '@domain/entities/Subscriber';
 import { PartialModelObject, QueryBuilder } from 'objection';
 import SubscriberModel from '../models/Subscriber';
 import Dao from './Dao';
+import { injectable } from 'inversify';
+import 'reflect-metadata';
 
+@injectable()
 export default class SubscriberDao extends Dao<SubscriberEntity, SubscriberModel> implements ISubscriberDao {
 	initQuery(): QueryBuilder<SubscriberModel, SubscriberModel[]> {
 		return SubscriberModel.query();
