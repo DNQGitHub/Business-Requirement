@@ -24,7 +24,10 @@ export default JSON.parse(`{
                                 "schema": {
                                     "type": "object",
                                     "properties": {
-                                        "data": {
+                                        "success": {
+                                            "type": "boolean"
+                                        },
+                                        "subscribers": {
                                             "type": "array",
                                             "items": {
                                                 "$ref": "#components/schemas/Subscriber"
@@ -41,7 +44,7 @@ export default JSON.parse(`{
                 "summary": "create new subscribers",
                 "requestBody": {
                     "content": {
-                        "application/x-www-form-urlencoded": {
+                        "multipart/form-data": {
                             "schema": {
                                 "type": "object",
                                 "properties": {
@@ -141,17 +144,23 @@ export default JSON.parse(`{
             "Subscriber": {
                 "type": "object",
                 "properties": {
-                    "_id": {
-                        "type": "string"
-                    },
                     "name": {
                         "type": "string"
                     },
-                    "description": {
+                    "email": {
                         "type": "string"
                     },
-                    "__v": {
-                        "type": "integer"
+                    "phoneNumber": {
+                        "type": "string"
+                    },
+                    "imageUrl": {
+                        "type": "string"
+                    },
+                    "createdDate": {
+                        "type": "date"
+                    },
+                    "updatedDate": {
+                        "type": "date"
                     }
                 }
             }
