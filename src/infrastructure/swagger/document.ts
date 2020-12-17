@@ -110,35 +110,23 @@ export default JSON.parse(`{
             "Success": {
                 "type": "object",
                 "properties": {
-                    "data": {
-                        "type": "object",
-                        "properties": {
-                            "success": {
-                                "type": "boolean"
-                            }
-                        }
+                    "success": {
+                        "type": "boolean"
                     }
                 }
             },
             "Error": {
                 "type": "object",
                 "properties": {
-                    "data": {
-                        "type": "object",
-                        "properties": {
-                            "error": {
-                                "oneOf": [
-                                    { "type": "string" },
-                                    { "type": "object" }
-                                ]
-                            }
-                        }
+                    "error": {
+                        "oneOf": [
+                            { "type": "string" },
+                            { "type": "object" }
+                        ]
                     }
                 },
                 "example": {
-                    "data": {
-                        "error": "string|object"
-                    }
+                    "error": "string|object"
                 }
             },
             "Subscriber": {
