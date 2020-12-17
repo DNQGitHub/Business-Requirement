@@ -13,28 +13,27 @@
             </div>
             <form class="form-sign-up slide-up" id="form-sign-up" enctype="multipart/form-data">
                 <div class="form-group">
-                    <!-- <label>Image</label> -->
+                    <input class="form-control" name="name" placeholder="Your name" required/>
+                    <small class="text-danger" id="error-name"></small>
+                </div>
+
+                <div class="form-group">
+                    <input class="form-control" name="email" placeholder="Your email" required/>
+                    <small class="text-danger" id="error-email"></small>
+                </div>
+
+                <div class="form-group">
+                    <input class="form-control" name="phone_number" placeholder="Your phone number"/>
+                    <small class="text-danger" id="error-phone_number"></small>
+                </div>
+
+                <div class="form-group">
                     <label class="image-upload-preview" for="image">
-                        <img id="preview"/>
+                        <img id="preview" src="/public/theme/images/image-placeholder-350x350.png"/>
                         <label for="image">Upload your image</label>
                         <input type="file" id="image" name="image" accept="image/*" hidden/>
                     </label>
                     <small class="text-danger" id="error-image"></small>
-                </div>
-                <div class="form-group">
-                    <!-- <label>Name</label> -->
-                    <input class="form-control" name="name" placeholder="Your name" required/>
-                    <small class="text-danger" id="error-name"></small>
-                </div>
-                <div class="form-group">
-                    <!-- <label>Email</label> -->
-                    <input class="form-control" name="email" placeholder="Your email" required/>
-                    <small class="text-danger" id="error-email"></small>
-                </div>
-                <div class="form-group">
-                    <!-- <label>Phone Number</label> -->
-                    <input class="form-control" name="phone_number" placeholder="Your phone number"/>
-                    <small class="text-danger" id="error-phone_number"></small>
                 </div>
 
                 <button class="btn-submit">Submit</button>
