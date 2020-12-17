@@ -8,20 +8,15 @@
     <body>
         <section class="section-table-subscribers">
             <h1>List Subscribers</h1>
-            <table class="table table-subscribers mt-4 mb-4 fade-in" id="table-subscribers">
-                <thead>
-                    <tr>
-                        <th class="text-left">#</th>
-                        <th class="text-left">Image</th>
-                        <th class="text-left">Name</th>
-                        <th class="text-left">Email</th>
-                        <th class="text-left">Phone Number</th>
-                    </tr>
-                </thead>
-                <tbody>
-                </tbody>
-            </table>
-            <div>&nbsp;</div>
+            <div class="table-subscribers" id="table-subscribers">
+                <div class="table-row table-row--header">
+                    <div class="table-cell table-cell--order">#</div>
+                    <div class="table-cell table-cell--image">Image</div>
+                    <div class="table-cell table-cell--name">Name</div>
+                    <div class="table-cell table-cell--email">Email</div>
+                    <div class="table-cell table-cell--phone-number">Phone Number</div>
+                </div>
+            </div>
         </section>
 
         <%- include('../master/footer') %>

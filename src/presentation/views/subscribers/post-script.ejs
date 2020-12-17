@@ -1,16 +1,16 @@
 <script>
 $(document).ready( function() {
     for( let i = 0 ; i < 100 ; i++ ) {
-        $('#table-subscribers tbody').append(
-            '<tr> \
-                <td>'+ i +'</td>\
-                <td>\
-                    <img/> \
-                </td>\
-                <td>#</td>\
-                <td>#</td>\
-                <td>#</td>\
-            </tr>'
+        $('#table-subscribers').append(
+            ' \
+            <div class="table-row"> \
+                <div class="table-cell table-cell--order">' + i + '</div> \
+                <div class="table-cell table-cell--image"><img src=""></div> \
+                <div class="table-cell table-cell--name">Name</div> \
+                <div class="table-cell table-cell--email">Email</div> \
+                <div class="table-cell table-cell--phone-number">Phone Number</div> \
+            </div> \
+            '
         );
     }
 });

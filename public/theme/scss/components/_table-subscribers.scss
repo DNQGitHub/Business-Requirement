@@ -1,31 +1,69 @@
 .table-subscribers {
-    max-width: 90%;
+    display: flex;
+    flex-direction: column;
+
+    position: relative;
+
+    width: 90%;
 
     font-size: 1.1rem;
 
-    border-radius: 10px;
-
     padding: 10px;
-
-    thead {
-        th {
-            border-top: none;
-            border-bottom: 1px dotted $primary-color;
-        }
-    }
-
-    tbody {
-        td {
-            border-top: none;
-        }
-
-        img {
-            width: 50px;
-            height: 50px;
-
-            background-image: url('../images/image-placeholder-350x350.png');
-            background-size: cover;
-        }
-    }
     
+    .table-row {
+        display: flex;
+        align-items: center;
+        
+        width: 100%;
+        min-height: 5rem;
+
+        box-shadow: 0 4px 12px 0 rgba( gray, 0.4 );
+
+        &--header {
+            font-weight: bold;
+            background-image: linear-gradient( 90deg, $primary-color 0, $secondary-color 51%, $primary-color );
+            color: white;
+            font-size: 1.2rem;
+            position: sticky;
+            top: 0px;
+        }
+    }
+
+    .table-row + .table-row {
+        margin-top: 15px;
+    }
+
+    .table-cell {
+        vertical-align: middle;
+        line-height: 5rem;
+
+        padding: 0 15px;
+
+        &--order {
+            width: 5rem;
+        }
+
+        &--image {
+            width: 70px;
+
+            img {
+                width: 50px;
+                height: 50px;
+
+                object-fit: cover;
+            }
+        }
+
+        &--name {
+            flex-grow: 2;
+        }
+
+        &--email {
+            flex-grow: 2;
+        }
+
+        &--phone-number {
+            flex-grow: 1;
+        }
+    }
 }
