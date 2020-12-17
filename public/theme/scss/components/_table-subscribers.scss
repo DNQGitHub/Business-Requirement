@@ -56,10 +56,12 @@
 
         &--name {
             flex-grow: 2;
+            max-width: 30%;
         }
 
         &--email {
             flex-grow: 2;
+            max-width: 30%;
         }
 
         &--phone-number {
