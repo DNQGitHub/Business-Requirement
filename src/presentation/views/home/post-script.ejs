@@ -27,17 +27,22 @@ $("#form-sign-up").submit(function(e) {
             $('small[id^=error]').html('');
         },
         success: function (data) {
-            console.log(JSON.stringify(data));
-            alert('subscribe successful');
+            $('.modal#modal-success').modal('show');
+
             thiz.reset();
             $('img#preview').attr('src', '/public/theme/images/image-placeholder-350x350.png');
         },
         error: function(req, status, error ) {
-            const errors = req.responseJSON.error;
+            try {
+                const errors = req.responseJSON.error;
 
-            for( let key of Object.keys(errors) ) {
-                let selector = 'small#error-' + key;
-                $(selector).html(errors[key]);
+                for( let key of Object.keys(errors) ) {
+                    let selector = 'small#error-' + key;
+                    $(selector).html(errors[key]);
+                }
+            }
+            catch( err ) {
+                $('.modal#modal-failure').modal('show');
             }
         },
         cache: false,

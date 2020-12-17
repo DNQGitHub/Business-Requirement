@@ -10,3 +10,7 @@
 @import "../../../../node_modules/bootstrap/scss/nav";
 @import "../../../../node_modules/bootstrap/scss/tables";
 @import "../../../../node_modules/bootstrap/scss/modal";
+
+.modal-backdrop {
+    background-color: rgba( white, 0.5 );
+}
