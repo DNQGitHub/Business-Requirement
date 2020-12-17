@@ -5,6 +5,6 @@ import apiRoutes from './api/routes';
 const router = Router();
 
 router.use(siteRoutes);
-router.use(apiRoutes);
+router.use('/api', apiRoutes);
 
 export default router;
