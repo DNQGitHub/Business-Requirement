@@ -14,12 +14,12 @@ export default class CreateSubscriberCommand implements ICreateSubscriberCommand
 	private _image: Express.Multer.File;
 
 	constructor(req: Request) {
-		const { name, email, phoneNumber } = req.body;
+		const { name, email, phone_number } = req.body;
 		const image = req.file;
 
 		this._name = name;
 		this._email = email;
-		this._phoneNumber = phoneNumber;
+		this._phoneNumber = phone_number;
 		this._image = image;
 	}
 
