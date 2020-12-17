@@ -9,20 +9,27 @@ $(document).ready( function() {
             if( data.success ) {
                 if( data.subscribers && data.subscribers.length > 0 ) {
                     const subscribers = data.subscribers;
+                    
+                    let waitingTime = 200;
+                    const deltaTime = 200;
 
                     for ( let index in subscribers ) {
-                        let subscriber = subscribers[index];
-                        $('#table-subscribers').append(
-                            ' \
-                            <div class="table-row"> \
-                                <div class="table-cell table-cell--order">' + (+index + 1) + '</div> \
-                                <div class="table-cell table-cell--image"><img src="' + subscriber.imageUrl + '"></div> \
-                                <div class="table-cell table-cell--name">' + subscriber.name + '</div> \
-                                <div class="table-cell table-cell--email">' + subscriber.email + '</div> \
-                                <div class="table-cell table-cell--phone-number">' + subscriber.phoneNumber + '</div> \
-                            </div> \
-                            '
-                        );
+                        setTimeout(() => {
+                            let subscriber = subscribers[index];
+                            $('#table-subscribers').append(
+                                ' \
+                                <div class="table-row fade-in"> \
+                                    <div class="table-cell table-cell--order">' + (+index + 1) + '</div> \
+                                    <div class="table-cell table-cell--image"><img src="' + subscriber.imageUrl + '"></div> \
+                                    <div class="table-cell table-cell--name">' + subscriber.name + '</div> \
+                                    <div class="table-cell table-cell--email">' + subscriber.email + '</div> \
+                                    <div class="table-cell table-cell--phone-number">' + subscriber.phoneNumber + '</div> \
+                                </div> \
+                                '
+                            );
+                        }, waitingTime);
+
+                        waitingTime += deltaTime;
                     }
                 }
                 else {
