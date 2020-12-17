@@ -15,6 +15,33 @@ $("input[type=file]#image").change(function(e) {
 
 $("#form-sign-up").submit(function(e) {
     e.preventDefault();
-    alert();
+    var thiz = e.currentTarget;
+
+    var formData = new FormData(this);
+
+    $.ajax({
+        url: '<%= process.env.BASE_URL %>/api/subscribers',
+        type: 'POST',
+        data: formData,
+        beforeSend: function(req) {
+            $('small[id^=error]').html('');
+        },
+        success: function (data) {
+            console.log(JSON.stringify(data));
+            alert('subscribe successful');
+            thiz.reset();
+        },
+        error: function(req, status, error ) {
+            const errors = req.responseJSON.error;
+
+            for( let key of Object.keys(errors) ) {
+                let selector = 'small#error-' + key;
+                $(selector).html(errors[key]);
+            }
+        },
+        cache: false,
+        contentType: false,
+        processData: false
+    });
 });
 </script>
