@@ -15,6 +15,7 @@ export default class CreateSubscriberCommandHandler extends CommandHandler<Creat
 		});
 
 		this._ec.collect('image', () => {
+			if (command.image === undefined || command.image === null) throw new Error('image is not uploaded');
 			if (command.image.mimetype.indexOf('image') == -1) throw new Error('image is invalid');
 		});
 
