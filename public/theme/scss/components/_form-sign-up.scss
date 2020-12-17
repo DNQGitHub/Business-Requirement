@@ -14,18 +14,13 @@
 
     box-shadow: 0 4px 12px 0 rgba( gray, 0.4 );
 
-    * + * {
-        margin-top: 5px;
-    }
-
-    img {
-        background-image: url('../images/image-placeholder-350x350.png');
-        background-size: contain;
-    }
-
     .form-control {
         color: inherit;
         font-size: inherit;
+    }
+
+    .form-group + .form-group {
+        margin-top: 10px;
     }
 
     .btn {
@@ -34,6 +29,10 @@
         &-submit {
             margin-top: 20px;
         }
+    }
+
+    textarea {
+        resize: none;
     }
 
     @include phone-portrait {
