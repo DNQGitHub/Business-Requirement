@@ -1,7 +1,10 @@
 import IDao from '@domain/daos/IDao';
 import { Model, QueryBuilder, PartialModelObject, MaybeCompositeId, Expression } from 'objection';
 import { IEntity } from '@domain/entities/Entity';
+import { injectable } from 'inversify';
+import 'reflect-metadata';
 
+@injectable()
 export default abstract class Dao<T extends IEntity, M extends Model> implements IDao<T> {
 	protected abstract initQuery(): QueryBuilder<M, M[]>;
 	protected abstract convertModelToEntity(model: M): T | null;
