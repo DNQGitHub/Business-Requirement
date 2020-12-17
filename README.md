@@ -42,7 +42,7 @@ npm run migrate:make <migration_name>
 npm run migrate:rollback
 ```
 
-## Start Develop ( No need to build )
+## Start Develop With Nodemon ( No need to build )
 
 ```
 npm run start:dev
