@@ -6,7 +6,7 @@ export async function up(knex: Knex): Promise<any> {
 		table.string('name');
 		table.string('email');
 		table.string('phone_number');
-		table.string('image_uri');
+		table.string('image_url');
 	});
 }
 
