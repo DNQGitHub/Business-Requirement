@@ -1,17 +1,33 @@
 <script>
 $(document).ready( function() {
-    for( let i = 0 ; i < 100 ; i++ ) {
-        $('#table-subscribers').append(
-            ' \
-            <div class="table-row"> \
-                <div class="table-cell table-cell--order">' + i + '</div> \
-                <div class="table-cell table-cell--image"><img src=""></div> \
-                <div class="table-cell table-cell--name">Name</div> \
-                <div class="table-cell table-cell--email">Email</div> \
-                <div class="table-cell table-cell--phone-number">Phone Number</div> \
-            </div> \
-            '
-        );
-    }
+
+    $.ajax({
+        url: '<%= process.env.BASE_URL %>/api/subscribers',
+        type: 'GET',
+        success: function (data) {
+            console.log(JSON.stringify(data));
+            if( data.success ) {
+                const subscribers = data.subscribers;
+
+                for ( let index in subscribers ) {
+                    let subscriber = subscribers[index];
+                    $('#table-subscribers').append(
+                        ' \
+                        <div class="table-row"> \
+                            <div class="table-cell table-cell--order">' + (+index + 1) + '</div> \
+                            <div class="table-cell table-cell--image"><img src="' + subscriber.imageUrl + '"></div> \
+                            <div class="table-cell table-cell--name">' + subscriber.name + '</div> \
+                            <div class="table-cell table-cell--email">' + subscriber.email + '</div> \
+                            <div class="table-cell table-cell--phone-number">' + subscriber.phoneNumber + '</div> \
+                        </div> \
+                        '
+                    );
+                }
+            }
+        },
+        error: function(req, status, error ) {
+
+        }
+    });
 });
 </script>
