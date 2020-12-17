@@ -5,6 +5,8 @@ export interface ISubscriberProps {
 	email: string;
 	phoneNumber: string;
 	imageUrl: string;
+	createdDate?: Date;
+	updatedDate?: Date;
 }
 
 export default class Subscriber extends Entity<ISubscriberProps> {
@@ -26,5 +28,13 @@ export default class Subscriber extends Entity<ISubscriberProps> {
 
 	get imageUrl() {
 		return this._props.imageUrl;
+	}
+
+	get createdDate() {
+		return this._props.createdDate;
+	}
+
+	get updatedDate() {
+		return this._props.updatedDate;
 	}
 }
