@@ -21,5 +21,5 @@ try {
 	childProcess.execSync('tsc --build tsconfig.prod.json');
 } catch (err) {
 	// eslint-disable-next-line no-console
-	console.log(err);
+	console.log(err.stdout.toString());
 }
