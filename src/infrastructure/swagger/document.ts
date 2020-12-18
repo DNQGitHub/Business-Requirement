@@ -7,8 +7,7 @@ export default JSON.parse(`{
     },
     "servers": [
         { 
-            "url": "http://localhost:3000/api",
-            "description": "Develop"
+            "url": "${process.env.BASE_URL}/api"
         }
     ],
     "paths": {
