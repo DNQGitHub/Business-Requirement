@@ -21,7 +21,6 @@ const query = `\
 
 knex.raw(query).then(result => {
 	console.log(result);
-	return true;
 });
 
 exit();
