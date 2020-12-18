@@ -1,5 +1,5 @@
 {
-	"name": "helpshift-igp-code-repo",
+	"name": "business-requirement",
 	"version": "1.0.0",
 	"scripts": {
 		"build": "node tools/scripts/build.js",
