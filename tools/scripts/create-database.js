@@ -2,7 +2,7 @@ require('../../dist/infrastructure/core');
 const Knex = require('knex');
 const { exit } = require('process');
 
-console.log('Start Create Database');
+console.log('START CREATE DB');
 
 const knex = Knex({
 	client: process.env.KNEX_CLIENT,
@@ -20,7 +20,6 @@ const query = `\
 `;
 
 knex.raw(query).then(result => {
-	console.log(result);
+	console.log('END CREATE DB');
+	exit();
 });
-
-exit();
