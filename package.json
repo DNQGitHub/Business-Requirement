@@ -3,13 +3,14 @@
 	"version": "1.0.0",
 	"scripts": {
 		"build": "node tools/scripts/build.js",
+		"db:create": "node tools/scripts/create-database.js",
 		"migrate:latest": "knex --knexfile ./src/infrastructure/knex/configs.ts migrate:latest",
 		"migrate:make": "knex --knexfile ./src/infrastructure/knex/configs.ts migrate:make -x ts ",
 		"migrate:rollback": "knex --knexfile ./src/infrastructure/knex/configs.ts migrate:rollback",
 		"lint": "eslint ./src/**.ts",
 		"start": "node -r module-alias/register ./dist",
 		"start:dev": "nodemon",
-		"deploy": "npm run migrate:latest & npm run start"
+		"deploy": "npm run db:create & npm run migrate:latest & npm run start"
 	},
 	"nodemonConfig": {
 		"watch": [
