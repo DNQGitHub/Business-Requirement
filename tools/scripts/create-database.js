@@ -3,7 +3,7 @@ require('../../dist/infrastructure/core');
 const Knex = require('knex');
 const { exit } = require('process');
 
-console.log('START CREATE DB');
+console.log('--- CREATE DB IF NOT EXISTS');
 
 const knex = Knex({
 	client: process.env.KNEX_CLIENT,
@@ -17,10 +17,10 @@ const knex = Knex({
 });
 
 const query = `\
-    CREATE DATABASE IF NOT EXISTS ${process.env.KNEX_DB_NAME} CHAR SET 'utf8mb4'
+	CREATE DATABASE IF NOT EXISTS ${process.env.KNEX_DB_NAME} CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 `;
 
 knex.raw(query).then(() => {
-	console.log('END CREATE DB');
+	console.log('--- DONE');
 	exit();
 });
