@@ -4,7 +4,7 @@ This is a sample
 
 # How to run
 
-## 1) Install dependent package
+## 1) Install dependencies
 
 ```
 npm install
@@ -16,13 +16,19 @@ npm install
 npm run build
 ```
 
-## 3) Migrate to latest
+## 3) Create Database
+
+```
+npm run db:create
+```
+
+## 4) Migrate to latest
 
 ```
 npm run migrate:latest
 ```
 
-## 4) Start
+## 5) Start
 
 ```
 npm run start
@@ -42,7 +48,7 @@ npm run migrate:make <migration_name>
 npm run migrate:rollback
 ```
 
-## Start Develop With Nodemon ( No need to build )
+## Start Develop With Nodemon
 
 ```
 npm run start:dev
