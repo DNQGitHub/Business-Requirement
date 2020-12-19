@@ -1,3 +1,4 @@
+// eslint-disable-next-line node/no-unpublished-require
 require('../../dist/infrastructure/core');
 const Knex = require('knex');
 const { exit } = require('process');
@@ -19,7 +20,7 @@ const query = `\
     CREATE DATABASE IF NOT EXISTS ${process.env.KNEX_DB_NAME} CHAR SET 'utf8mb4'
 `;
 
-knex.raw(query).then(result => {
+knex.raw(query).then(() => {
 	console.log('END CREATE DB');
 	exit();
 });
